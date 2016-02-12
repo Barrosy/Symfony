@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class FirstController extends Controller
 {
     /**
-     * @Route("/FirstController")
+     * @Route("/First")
      */
     public function myFirstAction()
     {
