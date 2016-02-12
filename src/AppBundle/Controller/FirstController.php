@@ -8,13 +8,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class myFirstController extends Controller
+class FirstController extends Controller
 {
     /**
      * @Route("/FirstController")
      */
     public function myFirstAction()
     {
-        return new Response("Woohoo my really first own php file on github!")
+        return new Response("Woohoo my really first own php file on github!");
     }
 }
