@@ -17,13 +17,13 @@ class MovieController extends Controller
      */
     public function indexAction()
     {
-        return new Response("Woohoo my really first own php file on github!");
+        return $this->render('movies/index.html.twig', array());
     }
 	
 	public function createAction()
 	{
 		$movie = new Movie();
-		$movie->setName('A wonderful day');
+		$movie->setTitle('A wonderful day');
 		$movie->setPrice('14.99');
 		$movie->setDescription('Day shines bright defining a wonderful day.');
 		
