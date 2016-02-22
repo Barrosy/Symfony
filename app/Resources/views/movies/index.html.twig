@@ -1,5 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>test</p>
+	{% if movies|length == 0 %}
+		There are no movie items available. Add a movie <a href="{{ path('movie_create_form') }}">here</a> to get started.
+	{% elseif movies|length != 0 %}
+		These are the results: <br />
+		<ul>
+			{% for x in movies %}
+				<li>Title: {{ x.title }}  - Price: {{ x.price }} - Description: {{ x.description }} - <a href="{{ path('movie_edit', {id: x.id}) }}">Edit</a> - <a href="{{ path('movie_delete', {id: x.id}) }}"> Delete</a></li>
+			{% endfor %}
+		</ul>
+		<a href="{{ path('movie_create_form') }}">Add more movie entries</a>
+	{% endif %}
 {% endblock %}

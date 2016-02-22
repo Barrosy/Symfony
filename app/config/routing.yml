@@ -5,3 +5,29 @@ app:
 lucky_number:
     path:     /lucky/number/{count}
     defaults: { _controller: AppBundle:Lucky:number }
+
+movies:
+    path:     /movies
+    defaults: { _controller: AppBundle:MovieDisplay:show }
+
+movie_create_form:
+    path:     /movies/create
+    defaults: { _controller: AppBundle:MovieCreate:form }
+
+movie_create_insert:
+    path:     /movies/create/insert
+    defaults: { _controller: AppBundle:MovieCreate:insert }
+    methods: [POST]
+
+movie_delete:
+    path:     /movies/delete/{id}
+    defaults: { _controller: AppBundle:MovieDelete:delete }
+
+movie_edit:
+    path:     /movies/edit/{id}
+    defaults: { _controller: AppBundle:MovieEdit:form }
+
+movie_edit_update:
+    path:     /movies/edit/update/{id}
+    defaults: { _controller: AppBundle:MovieEdit:update }
+    methods: [POST]
