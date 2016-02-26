@@ -31,3 +31,7 @@ movie_edit_update:
     path:     /movies/edit/update/{id}
     defaults: { _controller: AppBundle:MovieEdit:update }
     methods: [POST]
+
+movie_details:
+    path:     /movies/details/{id}
+    defaults: { _controller: AppBundle:MovieDetails:show }
