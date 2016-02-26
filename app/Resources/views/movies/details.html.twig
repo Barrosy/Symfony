@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<ul>
+		<li>
+			Title: {{ movie.title }}
+		</li>
+		<li>
+			Price: {{ movie.price }}
+		</li>
+		<li>
+			Description: {{ movie.description }}
+		</li>
+	</ul>
+	<a href="{{ path('movies') }}">Back</a>
+{% endblock %}

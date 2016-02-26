@@ -10,25 +10,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use AppBundle\Entity\Movie;
 
-class MovieDeleteController extends Controller
+class MovieDetailsController extends Controller
 {
-
-	public function deleteAction($id)
+	public function showAction($id)
 	{
-		$em = $this->getDoctrine()->getManager();
-
-		if(!$id)
-		{
-			throw $this->createNotFoundException('No ID found');
-		}
-
+		//return $this->render();
 		$movie = $this->getDoctrine()->getEntityManager()->getRepository('AppBundle:Movie')->Find($id);
 
 		if($movie != null)
 		{
-			$em->remove($movie);
-			$em->flush();
-			return $this->redirectToRoute('movies');
+			return $this->render('movies/details.html.twig', array('movie' => $movie));
 		}
 		else
 		{
